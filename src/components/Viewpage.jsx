@@ -27,7 +27,13 @@ function Viewpage() {
 
   return (
     <>
-      <h1 className="heading">Jaguvar Music</h1>
+      <div className="top-nav">
+        <h1 className="heading">Jaguvar Music</h1>
+        <div className="input-div">
+          <input className="input-box" type="text" />
+          <button className="input-button">Search</button>
+        </div>
+      </div>
 
       <div className="all-products">
         {products.map((e, i) =>

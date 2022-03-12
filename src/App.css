@@ -39,6 +39,12 @@
 
 body {
   background-color: #f3dbdc;
+
+  /* background: linear-gradient(
+    90deg,
+    rgba(48, 16, 255, 1) 0%,
+    rgba(100, 115, 255, 1) 100%
+  ); */
   /* color: #f3dbdc; */
 }
 button {
