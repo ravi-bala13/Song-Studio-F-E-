@@ -7,9 +7,24 @@ import { Link } from "react-router-dom";
 function Viewpage() {
   const [products, setProducts] = useState([]);
 
+  const [toshow, setToshow] = useState([]);
+
+  const [search, setsearch] = useState("");
+
   useEffect(() => {
     getProducts();
   }, []);
+
+  const sortFunction = (val) => {
+    let ans = products.filter((e) => {
+      // console.log("e:", e.song);
+      let tem = e.song.toUpperCase();
+      // console.log("tem:", val.toUpperCase());
+      if (tem.startsWith(val.toUpperCase())) return e;
+    });
+    console.log("ans:", ans);
+    setToshow(ans);
+  };
 
   const getProducts = async () => {
     try {
@@ -20,6 +35,7 @@ function Viewpage() {
       console.log("data:", data);
 
       setProducts(data);
+      setToshow(data);
     } catch (e) {
       console.log("error:", e);
     }
@@ -30,13 +46,21 @@ function Viewpage() {
       <div className="top-nav">
         <h1 className="heading">Jaguvar Music</h1>
         <div className="input-div">
-          <input className="input-box" type="text" />
-          <button className="input-button">Search</button>
+          <input
+            className="input-box"
+            type="text"
+            placeholder="Enter song name here to search"
+            // value={search}
+            onChange={(e) => sortFunction(e.target.value)}
+          />
+          {/* <button onClick={() => sortFunction(search)} className="input-button">
+            Search
+          </button> */}
         </div>
       </div>
 
       <div className="all-products">
-        {products.map((e, i) =>
+        {toshow.map((e, i) =>
           true ? (
             <div key={i}>
               <div className="details">
