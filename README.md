@@ -48,6 +48,6 @@ Open a Pull Request
 <h1>Contact</h1>
 Gmail : bals161616@gmail.com
 
-Project Link: https://github.com/your_username/repo_name
+Project Link: https://github.com/ravi-bala13/Song-Studio-F-E
 Deployement link: https://song-studio-f-e.vercel.app/
 
